@@ -158,6 +158,7 @@ py src/app.py
 
 ## List of cool technologies in use here
 
+- [Google Gen AI](https://ai.google.dev/gemini-api/docs)
 - [Pyttsx3](https://github.com/nateshmbhat/pyttsx3)
 - [Selenium](https://www.selenium.dev/)
 - [Speech Recognition](https://github.com/Uberi/speech_recognition#readme)
