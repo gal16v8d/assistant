@@ -2,7 +2,7 @@
 
 from typing import Any
 
-from actions import open_webpage
+from actions import open_webpage, WEB_PAGE_SYMBOLS
 from consts import const
 from processor.input_processor import get_user_input
 
@@ -18,4 +18,4 @@ def open_webpage_args(**kwargs: dict[str, Any]) -> str:
         **kwargs,
     )
 
-    return open_webpage(webpage_name.lower())
+    return open_webpage(webpage_name.lower(), WEB_PAGE_SYMBOLS)

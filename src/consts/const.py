@@ -43,3 +43,8 @@ VOICE_STOCK_MSG: Final[str] = "Please say the stock name."
 NO_WEBPAGE_MSG: Final[str] = "No webpage name provided. Please try again."
 TEXT_WEBPAGE_MSG: Final[str] = "Input the webpage name: "
 VOICE_WEBPAGE_MSG: Final[str] = "Please say the webpage name."
+
+# Web search related constants (For Currency).
+NO_CURRENCY_MSG: Final[str] = "No currency name provided. Please try again."
+TEXT_CURRENCY_MSG: Final[str] = "Input the currency name: "
+VOICE_CURRENCY_MSG: Final[str] = "Please say the currency name."

@@ -8,7 +8,7 @@ from actions.ai_prompt import (
 from actions.joke import get_joke
 from actions.stock import get_stock_price
 from actions.time import ask_time
-from actions.websearch import open_webpage, top_anime
+from actions.websearch import open_webpage, top_anime, CURRENCY_SYMBOLS, WEB_PAGE_SYMBOLS
 from actions.weekday import weekday
 
 __all__ = [
@@ -21,4 +21,6 @@ __all__ = [
     "open_webpage",
     "top_anime",
     "weekday",
+    "CURRENCY_SYMBOLS",
+    "WEB_PAGE_SYMBOLS",
 ]
