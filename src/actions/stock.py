@@ -17,7 +17,6 @@ STOCK_SYMBOLS: Final[dict[str, str]] = {
     "davivienda": "PFDAVVNDA.CL",
     "ecopetrol": "ECOPETROL.CO",
     "exito": "EXITO.CL",
-    "goldetf": "GOAUCO.CL",
     "google": "GOOGL",
     "mercadolibre": "MELI",
     "meta": "META",

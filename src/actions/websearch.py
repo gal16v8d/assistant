@@ -9,7 +9,9 @@ from selenium.webdriver.common.by import By
 
 CURRENCY_SYMBOLS: Final[dict[str, str]] = {
     "brl": "https://www.google.com/search?q=brl+to+cop+today",
+    "chf": "https://www.google.com/search?q=chf+to+cop+today",
     "eur": "https://www.google.com/search?q=eur+to+cop+today",
+    "gbp": "https://www.google.com/search?q=gbp+to+cop+today"
     "jpy": "https://www.google.com/search?q=jpy+to+cop+today",
     "mxn": "https://www.google.com/search?q=mxn+to+cop+today",
     "pen": "https://www.google.com/search?q=pen+to+cop+today",
