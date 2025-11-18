@@ -14,6 +14,7 @@ from adapters import (
     get_ai_text_args,
     get_stock_args,
     open_webpage_args,
+    open_webpage_crypto_args,
     open_webpage_currency_args,
 )
 from consts import const
@@ -46,6 +47,7 @@ if __name__ == "__main__":
     APP_OPTIONS: Final[dict[str, callable]] = {
         "ai image": get_ai_image_args,
         "ai text": get_ai_text_args,
+        "crypto": open_webpage_crypto_args,
         "currency": open_webpage_currency_args,
         "exit": assistant.end_assistant,
         "joke": get_joke,

@@ -48,3 +48,8 @@ VOICE_WEBPAGE_MSG: Final[str] = "Please say the webpage name."
 NO_CURRENCY_MSG: Final[str] = "No currency name provided. Please try again."
 TEXT_CURRENCY_MSG: Final[str] = "Input the currency name: "
 VOICE_CURRENCY_MSG: Final[str] = "Please say the currency name."
+
+# Web search related constants (For Crypto).
+NO_CRYPTO_MSG: Final[str] = "No crypto id provided. Please try again."
+TEXT_CRYPTO_MSG: Final[str] = "Input the crypto id: "
+VOICE_CRYPTO_MSG: Final[str] = "Please say the crypto id."

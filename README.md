@@ -147,13 +147,13 @@ pip3 freeze > requirements.txt
 ## Unix
 
 ```bash
-python src/app.py
+python src/main.py
 ```
 
 ## Windows
 
 ```bash
-py src/app.py
+py src/main.py
 ```
 
 ## List of cool technologies in use here
