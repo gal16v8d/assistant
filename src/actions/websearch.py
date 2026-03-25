@@ -6,19 +6,19 @@ import webbrowser
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
-
 CRYPTO_SYMBOLS: Final[dict[str, str]] = {
     "btc": "https://coinmarketcap.com/currencies/bitcoin/",
     "eth": "https://coinmarketcap.com/currencies/ethereum/",
     "xrp": "https://coinmarketcap.com/currencies/xrp/",
     "bnb": "https://coinmarketcap.com/currencies/bnb/",
     "sol": "https://coinmarketcap.com/currencies/solana/",
-    "zec": "https://coinmarketcap.com/currencies/zcash/",
+    "trx": "https://coinmarketcap.com/currencies/tron/",
     "ltc": "https://coinmarketcap.com/currencies/litecoin/",
 }
 
 CURRENCY_SYMBOLS: Final[dict[str, str]] = {
     "brl": "https://www.google.com/search?q=brl+to+cop+today",
+    "cad": "https://www.google.com/search?q=cad+to+cop+today",
     "chf": "https://www.google.com/search?q=chf+to+cop+today",
     "eur": "https://www.google.com/search?q=eur+to+cop+today",
     "gbp": "https://www.google.com/search?q=gbp+to+cop+today",
@@ -26,6 +26,7 @@ CURRENCY_SYMBOLS: Final[dict[str, str]] = {
     "mxn": "https://www.google.com/search?q=mxn+to+cop+today",
     "pen": "https://www.google.com/search?q=pen+to+cop+today",
     "usd": "https://www.google.com/search?q=usd+to+cop+today",
+    "yuan": "https://www.google.com/search?q=yuan+to+cop+today",
 }
 
 WEB_PAGE_SYMBOLS: Final[dict[str, str]] = {
@@ -64,7 +65,7 @@ def top_anime(**_: dict[str, Any]) -> str:
     """
     Open the top anime page in the web browser.
     """
-    url = f"{WEB_PAGE_SYMBOLS.get('animeplanet')}anime/top-anime"
+    url = f"{WEB_PAGE_SYMBOLS.get('animeplanet')}/anime/top-anime"
     try:
         driver = webdriver.Firefox()
         driver.get(url)

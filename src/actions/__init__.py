@@ -2,7 +2,6 @@
 
 from actions.ai_prompt import (
     get_ai_image_response,
-    get_ai_image_response_v3,
     get_ai_text_response,
 )
 from actions.joke import get_joke
@@ -20,7 +19,6 @@ from actions.weekday import weekday
 __all__ = [
     "ask_time",
     "get_ai_image_response",
-    "get_ai_image_response_v3",
     "get_ai_text_response",
     "get_joke",
     "get_stock_price",

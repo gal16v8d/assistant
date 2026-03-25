@@ -4,7 +4,6 @@ from typing import Any
 
 from actions import (
     get_ai_image_response,
-    get_ai_image_response_v3,
     get_ai_text_response,
 )
 from consts import const
@@ -41,12 +40,4 @@ def get_ai_image_args(**kwargs: dict[str, Any]) -> str:
         error_msg=const.NO_AI_TITLE_MSG,
         **kwargs
     )
-    model = get_user_input(
-        request_value_t=const.MODEL_AI_TEXT_MSG,
-        request_value_v=const.MODEL_AI_VOICE_MSG,
-        error_msg=const.NO_AI_MODEL_MSG,
-        **kwargs
-    )
-    if model == "v3":
-        return get_ai_image_response_v3(ai_text, title)
     return get_ai_image_response(ai_text, title)

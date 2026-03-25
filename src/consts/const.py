@@ -2,7 +2,6 @@
 
 from typing import Final
 
-
 # Assistant messages and prompts.
 EXIT_MSG: Final[str] = "Thank you for using the virtual assistant. Goodbye!"
 INPUT_TYPE_MSG: Final[str] = "Enter 'v' for voice input or 't' for text input: "
@@ -23,9 +22,6 @@ TEXT_INPUT: Final[str] = "t"
 VOICE_INPUT: Final[str] = "v"
 
 # AI related constants.
-MODEL_AI_TEXT_MSG: Final[str] = "Please choose the AI model (gemini or v3): "
-MODEL_AI_VOICE_MSG: Final[str] = "Please say the AI model (gemini or v3)."
-NO_AI_MODEL_MSG: Final[str] = "No AI model provided. Please try again."
 NO_AI_TEXT_MSG: Final[str] = "No prompt provided. Please try again."
 NO_AI_TITLE_MSG: Final[str] = "No title provided. Please try again."
 TEXT_AI_MSG: Final[str] = "Input your text prompt: "
