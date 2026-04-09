@@ -2,7 +2,7 @@
 
 from typing import Any
 
-from actions import open_webpage, CRYPTO_SYMBOLS
+from actions import open_webpage
 from consts import const
 from processor.input_processor import get_user_input
 
@@ -18,4 +18,4 @@ def open_webpage_crypto_args(**kwargs: dict[str, Any]) -> str:
         **kwargs,
     )
 
-    return open_webpage(webpage_crypto_name.lower(), CRYPTO_SYMBOLS)
+    return open_webpage(webpage_crypto_name.lower(), const.CRYPTO_SYMBOLS)

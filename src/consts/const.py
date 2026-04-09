@@ -49,3 +49,79 @@ VOICE_CURRENCY_MSG: Final[str] = "Please say the currency name."
 NO_CRYPTO_MSG: Final[str] = "No crypto id provided. Please try again."
 TEXT_CRYPTO_MSG: Final[str] = "Input the crypto id: "
 VOICE_CRYPTO_MSG: Final[str] = "Please say the crypto id."
+
+# BVC target stocks
+BVC_STOCKS: Final[dict[str, str]] = {
+    "bogota": "BOGOTA.CL",
+    "bolivar": "GRUPOBOLIVAR.CL",
+    "bvc": "BVC.CL",
+    "celsia": "CELSIA.CL",
+    "corfi": "CORFICOLCF.CL",
+    "ecopetrol": "ECOPETROL.CO",
+    "exito": "EXITO.CL",
+    "isa": "ISA.CL",
+    "mineros": "MINEROS.CL",
+    "pfargos": "PFGRUPOARG.CL",
+    "pfaval": "PFAVAL.CL",
+    "pfcibest": "PFCIBEST.CL",
+    "pfdavi": "PFDAVIGRP.CL",
+    "pfsura": "PFGRUPSURA.CL",
+    "promigas": "PROMIGAS.CL",
+    "sqmbco": "SQMBCO.CL",
+    "terpel": "TERPEL.CL",
+}
+# International target stocks
+INT_STOCKS: Final[dict[str, str]] = {
+    "bep": "BEP",
+    "bond": "BND",
+    "cibr": "CIBR",
+    "copx": "COPX",
+    "gev": "GEV",
+    "gold": "GLDM",
+    "ibb": "IBB",
+    "ma": "MA",
+    "nee": "NEE",
+    "o": "O",
+    "pho": "PHO",
+    "pwr": "PWR",
+    "qqq": "QQQ",
+    "robo": "ROBO",
+    "silver": "SLV",
+    "soxx": "SOXX",
+    "ura": "URA",
+    "vigi": "VIGI",
+    "vrt": "VRT",
+    "vwo": "VWO",
+    "wm": "WM",
+    "xle": "XLE",
+    "xlp": "XLP",
+    "xlv": "XLV",
+}
+
+STOCK_SYMBOLS: Final[dict[str, str]] = BVC_STOCKS | INT_STOCKS
+
+BASE_CRYPTO_URL: Final[str] = "https://coinmarketcap.com/currencies"
+CRYPTO_SYMBOLS: Final[dict[str, str]] = {
+    "btc": f"{BASE_CRYPTO_URL}/bitcoin/",
+    "eth": f"{BASE_CRYPTO_URL}/ethereum/",
+    "xrp": f"{BASE_CRYPTO_URL}/xrp/",
+    "bnb": f"{BASE_CRYPTO_URL}/bnb/",
+    "sol": f"{BASE_CRYPTO_URL}/solana/",
+    "trx": f"{BASE_CRYPTO_URL}/tron/",
+}
+
+
+BASE_URL_TEMPLATE = "https://www.google.com/search?q={}+to+cop+today"
+CURRENCIES: Final[list[str]] = ["brl", "cad", "chf", "eur", "gbp", "jpy", "mxn", "pen", "usd", "yuan"]
+CURRENCY_SYMBOLS: Final[dict[str, str]] = {
+    curr: BASE_URL_TEMPLATE.format(curr) for curr in CURRENCIES
+}
+
+WEB_PAGE_SYMBOLS: Final[dict[str, str]] = {
+    "animeplanet": "https://www.anime-planet.com",
+    "chess": "https://www.chess.com",
+    "github": "https://www.github.com/gal16v8d",
+    "google": "https://www.google.com",
+    "wikipedia": "https://www.wikipedia.org",
+    "youtube": "https://www.youtube.com",
+}

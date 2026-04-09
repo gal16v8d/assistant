@@ -1,42 +1,11 @@
 """Interaction with web browser by ask."""
 
-from typing import Any, Final
+from typing import Any
 
 import webbrowser
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-
-CRYPTO_SYMBOLS: Final[dict[str, str]] = {
-    "btc": "https://coinmarketcap.com/currencies/bitcoin/",
-    "eth": "https://coinmarketcap.com/currencies/ethereum/",
-    "xrp": "https://coinmarketcap.com/currencies/xrp/",
-    "bnb": "https://coinmarketcap.com/currencies/bnb/",
-    "sol": "https://coinmarketcap.com/currencies/solana/",
-    "trx": "https://coinmarketcap.com/currencies/tron/",
-    "ltc": "https://coinmarketcap.com/currencies/litecoin/",
-}
-
-CURRENCY_SYMBOLS: Final[dict[str, str]] = {
-    "brl": "https://www.google.com/search?q=brl+to+cop+today",
-    "cad": "https://www.google.com/search?q=cad+to+cop+today",
-    "chf": "https://www.google.com/search?q=chf+to+cop+today",
-    "eur": "https://www.google.com/search?q=eur+to+cop+today",
-    "gbp": "https://www.google.com/search?q=gbp+to+cop+today",
-    "jpy": "https://www.google.com/search?q=jpy+to+cop+today",
-    "mxn": "https://www.google.com/search?q=mxn+to+cop+today",
-    "pen": "https://www.google.com/search?q=pen+to+cop+today",
-    "usd": "https://www.google.com/search?q=usd+to+cop+today",
-    "yuan": "https://www.google.com/search?q=yuan+to+cop+today",
-}
-
-WEB_PAGE_SYMBOLS: Final[dict[str, str]] = {
-    "animeplanet": "https://www.anime-planet.com",
-    "chess": "https://www.chess.com",
-    "github": "https://www.github.com/gal16v8d",
-    "google": "https://www.google.com",
-    "wikipedia": "https://www.wikipedia.org",
-    "youtube": "https://www.youtube.com",
-}
+from consts import const
 
 
 def open_webpage(url: str, allowed_symbols: dict[str, str]) -> str:
@@ -65,7 +34,7 @@ def top_anime(**_: dict[str, Any]) -> str:
     """
     Open the top anime page in the web browser.
     """
-    url = f"{WEB_PAGE_SYMBOLS.get('animeplanet')}/anime/top-anime"
+    url = f"{const.WEB_PAGE_SYMBOLS.get('animeplanet')}/anime/top-anime"
     try:
         driver = webdriver.Firefox()
         driver.get(url)

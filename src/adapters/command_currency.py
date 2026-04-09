@@ -2,7 +2,7 @@
 
 from typing import Any
 
-from actions import open_webpage, CURRENCY_SYMBOLS
+from actions import open_webpage
 from consts import const
 from processor.input_processor import get_user_input
 
@@ -18,4 +18,4 @@ def open_webpage_currency_args(**kwargs: dict[str, Any]) -> str:
         **kwargs,
     )
 
-    return open_webpage(webpage_currency_name.lower(), CURRENCY_SYMBOLS)
+    return open_webpage(webpage_currency_name.lower(), const.CURRENCY_SYMBOLS)
