@@ -61,6 +61,7 @@ BVC_STOCKS: Final[dict[str, str]] = {
     "exito": "EXITO.CL",
     "isa": "ISA.CL",
     "mineros": "MINEROS.CL",
+    "pei": "PEI.CL",
     "pfargos": "PFGRUPOARG.CL",
     "pfaval": "PFAVAL.CL",
     "pfcibest": "PFCIBEST.CL",
@@ -69,28 +70,33 @@ BVC_STOCKS: Final[dict[str, str]] = {
     "promigas": "PROMIGAS.CL",
     "sqmbco": "SQMBCO.CL",
     "terpel": "TERPEL.CL",
+    "tin": "TIN.CL"
 }
 # International target stocks
 INT_STOCKS: Final[dict[str, str]] = {
+    "arkg": "ARKG",
     "bep": "BEP",
     "bond": "BND",
+    "bti": "BTI",
+    "cgw": "CGW",
+    "cqqq": "CQQQ",
     "cibr": "CIBR",
     "copx": "COPX",
+    "ewj": "EWJ",
+    "ewy": "EWY",
     "gev": "GEV",
     "gold": "GLDM",
-    "ibb": "IBB",
     "ma": "MA",
     "nee": "NEE",
     "o": "O",
-    "pho": "PHO",
     "pwr": "PWR",
-    "qqq": "QQQ",
     "robo": "ROBO",
     "silver": "SLV",
     "soxx": "SOXX",
     "ura": "URA",
     "vigi": "VIGI",
     "vrt": "VRT",
+    "voo": "VOO",
     "vwo": "VWO",
     "wm": "WM",
     "xle": "XLE",
@@ -108,6 +114,7 @@ CRYPTO_SYMBOLS: Final[dict[str, str]] = {
     "bnb": f"{BASE_CRYPTO_URL}/bnb/",
     "sol": f"{BASE_CRYPTO_URL}/solana/",
     "trx": f"{BASE_CRYPTO_URL}/tron/",
+    "zec": f"{BASE_CRYPTO_URL}/zcash/",
 }
 
 

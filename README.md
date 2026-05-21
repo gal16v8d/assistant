@@ -2,15 +2,19 @@
 
 General app that automate certain actions, by following instructions through voice or text input. Follow the init menu to check current capabilities.
 
-# Get started
+---
 
-## Unix
+## 🚀 Getting Started
 
-Install poetry:
+### 1. Prerequisites
+
+Ensure you have the modern Poetry package manager installed globally on your machine:
 
 ```bash
-curl -sSL https://install.python-poetry.org | python3 -
+curl -sSL [https://install.python-poetry.org](https://install.python-poetry.org) | python3 -
 ```
+
+### 2. Useful commands
 
 Init repo:
 
@@ -42,9 +46,27 @@ Remove a dependency you don't need:
 poetry remove lib_here
 ```
 
-# Set up
+Audit/Scan for vulnerabilities
 
-# env
+Install audit plugin (if required)
+
+```bash
+poetry self add poetry-audit-plugin
+```
+
+Vulnerability check
+
+```bash
+poetry audit
+```
+
+Typosquatting, lock file integrity check
+
+```bash
+poetry check
+```
+
+### 3. Set up
 
 Activate using the command:
 
@@ -70,7 +92,7 @@ or
 deactivate
 ```
 
-# Advanced use cases
+### 4. Advanced use cases
 
 If multiple python versions are found in the operative system, then
 
@@ -78,7 +100,7 @@ If multiple python versions are found in the operative system, then
 - if needed set the local python for this project, like
 
 ```bash
-pyenv local 3.13.3
+pyenv local 3.14.3
 ```
 
 - you can confirm all good by checking
@@ -90,51 +112,12 @@ pyenv which python
 - set the specific python version like
 
 ```bash
-poetry env use $USER_HOME/.pyenv/versions/3.13.3/bin/python
+poetry env use $USER_HOME/.pyenv/versions/3.14.3/bin/python
 ```
 
 - then install using commands like the ones in the previous section
 
-## Windows
-
-Update pip:
-
-```bash
-py -m pip install --upgrade pip
-```
-
-Install python3-venv:
-
-```bash
-py -m pip install virtualenv
-```
-
-Then create the folder for allocate the virtual environment:
-
-```bash
-py -m virtualenv env
-```
-
-Optional (run if UnauthorizedAccess in powershell console):
-
-```bash
-Set-ExecutionPolicy Unrestricted -Scope Process
-```
-
-Then activate the virtual env:
-
-```bash
-.\venv\Scripts\activate.ps1
-```
-
-Now you can install python libs as you need it
-
-# set up
-
-Configure all your dependencies in Pipfile.
-See: [Pypi](https://pypi.org/)
-
-# dependencies
+### 5. Requirements file
 
 For generate requirements.txt file please execute:
 
@@ -142,18 +125,10 @@ For generate requirements.txt file please execute:
 pip3 freeze > requirements.txt
 ```
 
-# launch
-
-## Unix
+### 6. Launch
 
 ```bash
-python src/main.py
-```
-
-## Windows
-
-```bash
-py src/main.py
+python3 src/main.py
 ```
 
 ## List of cool technologies in use here
