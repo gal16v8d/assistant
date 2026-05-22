@@ -86,6 +86,7 @@ INT_STOCKS: Final[dict[str, str]] = {
     "ewy": "EWY",
     "gev": "GEV",
     "gold": "GLDM",
+    "nasa": "NASA",
     "ma": "MA",
     "main": "MAIN",
     "nee": "NEE",
@@ -94,7 +95,6 @@ INT_STOCKS: Final[dict[str, str]] = {
     "robo": "ROBO",
     "silver": "SLV",
     "soxx": "SOXX",
-    # TODO: include SpaceX ticker here
     "ura": "URA",
     "vigi": "VIGI",
     "vrt": "VRT",
