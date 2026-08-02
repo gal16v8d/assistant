@@ -18,7 +18,7 @@ def get_ai_text_args(**kwargs: dict[str, Any]) -> str:
         request_value_t=const.TEXT_AI_MSG,
         request_value_v=const.VOICE_AI_MSG,
         error_msg=const.NO_AI_TEXT_MSG,
-        **kwargs
+        **kwargs,
     )
 
     return get_ai_text_response(ai_text)
@@ -32,12 +32,12 @@ def get_ai_image_args(**kwargs: dict[str, Any]) -> str:
         request_value_t=const.TEXT_AI_MSG,
         request_value_v=const.VOICE_AI_MSG,
         error_msg=const.NO_AI_TEXT_MSG,
-        **kwargs
+        **kwargs,
     )
     title = get_user_input(
         request_value_t=const.TITLE_AI_TEXT_MSG,
         request_value_v=const.TITLE_AI_VOICE_MSG,
         error_msg=const.NO_AI_TITLE_MSG,
-        **kwargs
+        **kwargs,
     )
     return get_ai_image_response(ai_text, title)

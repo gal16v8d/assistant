@@ -56,9 +56,11 @@ BVC_STOCKS: Final[dict[str, str]] = {
     "bolivar": "GRUPOBOLIVAR.CL",
     "bvc": "BVC.CL",
     "celsia": "CELSIA.CL",
-    "corfi": "CORFICOLCF.CL",
+    "conconcret": "CONCONCRET.CL",
+    "corficolcf": "CORFICOLCF.CL",
     "ecopetrol": "ECOPETROL.CO",
     "exito": "EXITO.CL",
+    "geb": "GEB.CL",
     "isa": "ISA.CL",
     "mineros": "MINEROS.CL",
     "pei": "PEI.CL",
@@ -68,68 +70,79 @@ BVC_STOCKS: Final[dict[str, str]] = {
     "pfdavi": "PFDAVIGRP.CL",
     "pfsura": "PFGRUPSURA.CL",
     "promigas": "PROMIGAS.CL",
-    "sqmbco": "SQMBCO.CL",
     "terpel": "TERPEL.CL",
-    "tin": "TIN.CL"
 }
 # International target stocks
 INT_STOCKS: Final[dict[str, str]] = {
-    "aaoi": "AAOI",
+    "awk": "AWK",
     "bti": "BTI",
-    "cgw": "CGW",
-    "cibr": "CIBR",
-    "copx": "COPX",
+    "ceg": "CEG",
+    "crwd": "CRWD",
     "gev": "GEV",
-    "gold": "GLDM",
-    "iemg": "IEMG",
-    "isrg":"ISRG",
-    "keyence": "KYCCF",
+    "gldm": "GLDM",
+    "isrg": "ISRG",
     "lite": "LITE",
     "ma": "MA",
     "main": "MAIN",
     "mrvl": "MRVL",
+    "mu": "MU",
     "nbis": "NBIS",
     "nee": "NEE",
     "o": "O",
-    "pwr": "PWR",
+    "panw": "PANW",
     "qqqm": "QQQM",
     "sgov": "SGOV",
-    "silver": "SLV",
-    "sndk": "SNDK",
+    "slv": "SLV",
     "soxq": "SOXQ",
-    "ufo": "UFO",
+    "spcx": "SPCX",
     "ura": "URA",
     "vea": "VEA",
-    "vigi": "VIGI",
     "voo": "VOO",
     "vrt": "VRT",
     "wdc": "WDC",
     "wm": "WM",
     "xar": "XAR",
-    "xbi": "XBI",
     "xle": "XLE",
     "xlf": "XLF",
     "xli": "XLI",
     "xlp": "XLP",
     "xlv": "XLV",
+    "xyl": "XYL",
 }
 
 STOCK_SYMBOLS: Final[dict[str, str]] = BVC_STOCKS | INT_STOCKS
 
 BASE_CRYPTO_URL: Final[str] = "https://coinmarketcap.com/currencies"
 CRYPTO_SYMBOLS: Final[dict[str, str]] = {
+    # core macro & exchange reserve
     "btc": f"{BASE_CRYPTO_URL}/bitcoin/",
     "eth": f"{BASE_CRYPTO_URL}/ethereum/",
-    "xrp": f"{BASE_CRYPTO_URL}/xrp/",
-    "bnb": f"{BASE_CRYPTO_URL}/bnb/",
     "sol": f"{BASE_CRYPTO_URL}/solana/",
+    "bnb": f"{BASE_CRYPTO_URL}/bnb/",
+    # network utility & sec
     "trx": f"{BASE_CRYPTO_URL}/tron/",
+    "xrp": f"{BASE_CRYPTO_URL}/xrp/",
+    # focused innovation & infra
+    "link": f"{BASE_CRYPTO_URL}/chainlink/",
+    "sui": f"{BASE_CRYPTO_URL}/sui/",
+    # speculative (own risk)
     "zec": f"{BASE_CRYPTO_URL}/zcash/",
 }
 
 
 BASE_URL_TEMPLATE = "https://www.google.com/search?q={}+to+cop+today"
-CURRENCIES: Final[list[str]] = ["brl", "cad", "chf", "eur", "gbp", "jpy", "mxn", "pen", "usd", "yuan"]
+CURRENCIES: Final[list[str]] = [
+    "brl",
+    "cad",
+    "chf",
+    "eur",
+    "gbp",
+    "jpy",
+    "mxn",
+    "pen",
+    "usd",
+    "yuan",
+]
 CURRENCY_SYMBOLS: Final[dict[str, str]] = {
     curr: BASE_URL_TEMPLATE.format(curr) for curr in CURRENCIES
 }

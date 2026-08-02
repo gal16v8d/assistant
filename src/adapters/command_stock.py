@@ -15,7 +15,7 @@ def get_stock_args(**kwargs: dict[str, Any]) -> str:
         request_value_t=const.TEXT_STOCK_MSG,
         request_value_v=const.VOICE_STOCK_MSG,
         error_msg=const.NO_STOCK_MSG,
-        **kwargs
+        **kwargs,
     )
 
     return get_stock_price(stock_name.lower())
