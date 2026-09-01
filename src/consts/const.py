@@ -112,21 +112,26 @@ INT_STOCKS: Final[dict[str, str]] = {
 
 STOCK_SYMBOLS: Final[dict[str, str]] = BVC_STOCKS | INT_STOCKS
 
-BASE_CRYPTO_URL: Final[str] = "https://coinmarketcap.com/currencies"
+BASE_CRYPTO_URL: Final[str] = "https://coinmarketcap.com/currencies/{}/"
+CRYPTOS: Final[list[str]] = [
+    # Core Macro & Exchange Reserve
+    "bitcoin",
+    "ethereum",
+    "solana",
+    "bnb",
+    # Network Utility & Event Secondary
+    "tron",
+    "xrp",
+    # Focused Innovation & Tactical Speculation
+    "chainlink",
+    "sui",
+    "aave",
+    "morpho",
+    "hyperliquid",
+    "zcash",
+]
 CRYPTO_SYMBOLS: Final[dict[str, str]] = {
-    # core macro & exchange reserve
-    "btc": f"{BASE_CRYPTO_URL}/bitcoin/",
-    "eth": f"{BASE_CRYPTO_URL}/ethereum/",
-    "sol": f"{BASE_CRYPTO_URL}/solana/",
-    "bnb": f"{BASE_CRYPTO_URL}/bnb/",
-    # network utility & sec
-    "trx": f"{BASE_CRYPTO_URL}/tron/",
-    "xrp": f"{BASE_CRYPTO_URL}/xrp/",
-    # focused innovation & infra
-    "link": f"{BASE_CRYPTO_URL}/chainlink/",
-    "sui": f"{BASE_CRYPTO_URL}/sui/",
-    # speculative (own risk)
-    "zec": f"{BASE_CRYPTO_URL}/zcash/",
+    crypto: BASE_CRYPTO_URL.format(crypto) for crypto in CRYPTOS
 }
 
 
