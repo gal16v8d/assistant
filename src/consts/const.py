@@ -92,6 +92,7 @@ INT_STOCKS: Final[dict[str, str]] = {
     "nee": "NEE",
     "o": "O",
     "panw": "PANW",
+    "purr": "PURR",
     "qqqm": "QQQM",
     "sgov": "SGOV",
     "slv": "SLV",
