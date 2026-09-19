@@ -50,10 +50,11 @@ NO_CRYPTO_MSG: Final[str] = "No crypto id provided. Please try again."
 TEXT_CRYPTO_MSG: Final[str] = "Input the crypto id: "
 VOICE_CRYPTO_MSG: Final[str] = "Please say the crypto id."
 
+# Follow-up check ups from stocks.md
 # BVC target stocks
 BVC_STOCKS: Final[dict[str, str]] = {
     "bogota": "BOGOTA.CL",
-    "bolivar": "GRUPOBOLIVAR.CL",
+    "bolivar": "GRUBOLIVAR.CL",
     "bvc": "BVC.CL",
     "celsia": "CELSIA.CL",
     "conconcret": "CONCONCRET.CL",
@@ -75,13 +76,14 @@ BVC_STOCKS: Final[dict[str, str]] = {
 # International target stocks
 INT_STOCKS: Final[dict[str, str]] = {
     "awk": "AWK",
-    "bti": "BTI",
     "ceg": "CEG",
     "crwd": "CRWD",
+    "fcx": "FCX",
     "gev": "GEV",
     "gldm": "GLDM",
     "isrg": "ISRG",
     "lite": "LITE",
+    "lly": "LLY",
     "ma": "MA",
     "main": "MAIN",
     "mrvl": "MRVL",
@@ -99,6 +101,7 @@ INT_STOCKS: Final[dict[str, str]] = {
     "vea": "VEA",
     "voo": "VOO",
     "vrt": "VRT",
+    "vwo": "VWO",
     "wdc": "WDC",
     "wm": "WM",
     "xar": "XAR",
@@ -112,6 +115,7 @@ INT_STOCKS: Final[dict[str, str]] = {
 
 STOCK_SYMBOLS: Final[dict[str, str]] = BVC_STOCKS | INT_STOCKS
 
+# Follow-up check ups from crypto.md
 BASE_CRYPTO_URL: Final[str] = "https://coinmarketcap.com/currencies/{}/"
 CRYPTOS: Final[list[str]] = [
     # Core Macro & Exchange Reserve
@@ -122,13 +126,22 @@ CRYPTOS: Final[list[str]] = [
     # Network Utility & Event Secondary
     "tron",
     "xrp",
-    # Focused Innovation & Tactical Speculation
+    # Focused Innovation
     "chainlink",
-    "sui",
+    "bittensor",
     "aave",
     "morpho",
     "hyperliquid",
+    # Tactical swing
     "zcash",
+    "dash",
+    # stablecoins
+    "tether",
+    "usd-coin",
+    "usd1",
+    "united-stables",
+    "euro-coin",
+    "eurite"
 ]
 CRYPTO_SYMBOLS: Final[dict[str, str]] = {
     crypto: BASE_CRYPTO_URL.format(crypto) for crypto in CRYPTOS
