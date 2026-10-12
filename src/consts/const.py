@@ -75,6 +75,7 @@ BVC_STOCKS: Final[dict[str, str]] = {
 }
 # International target stocks
 INT_STOCKS: Final[dict[str, str]] = {
+    "anet": "ANET",
     "awk": "AWK",
     "ceg": "CEG",
     "crwd": "CRWD",
@@ -103,8 +104,6 @@ INT_STOCKS: Final[dict[str, str]] = {
     "voo": "VOO",
     "vrt": "VRT",
     "vwo": "VWO",
-    "wdc": "WDC",
-    "wm": "WM",
     "xar": "XAR",
     "xle": "XLE",
     "xlf": "XLF",
@@ -129,6 +128,7 @@ CRYPTOS: Final[list[str]] = [
     "xrp",
     # Focused Innovation
     "chainlink",
+    "quant",
     "bittensor",
     "aave",
     "morpho",
@@ -140,6 +140,7 @@ CRYPTOS: Final[list[str]] = [
     "tether",
     "usd-coin",
     "usd1",
+    "usds",
     "united-stables",
     "euro-coin",
     "eurite"
