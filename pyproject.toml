@@ -16,7 +16,8 @@ dependencies = [
     "pyttsx3>=2.99",
     "pyaudio>=0.2.14",
     "google-genai>=1.75.0",
-    "pillow>=12.2.0"
+    "pillow>=12.2.0",
+    "python-dotenv>=1.2.4"
 ]
 
 [dependency-groups]

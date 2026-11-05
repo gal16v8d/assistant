@@ -1,6 +1,7 @@
 """Constants for the application."""
 
 from typing import Final
+from dotenv import dotenv_values, find_dotenv
 
 # Assistant messages and prompts.
 EXIT_MSG: Final[str] = "Thank you for using the virtual assistant. Goodbye!"
@@ -51,120 +52,45 @@ TEXT_CRYPTO_MSG: Final[str] = "Input the crypto id: "
 VOICE_CRYPTO_MSG: Final[str] = "Please say the crypto id."
 
 # Follow-up check ups from stocks.md
-# BVC target stocks
-BVC_STOCKS: Final[dict[str, str]] = {
-    "bogota": "BOGOTA.CL",
-    "bolivar": "GRUBOLIVAR.CL",
-    "bvc": "BVC.CL",
-    "celsia": "CELSIA.CL",
-    "conconcret": "CONCONCRET.CL",
-    "corficolcf": "CORFICOLCF.CL",
-    "ecopetrol": "ECOPETROL.CO",
-    "exito": "EXITO.CL",
-    "geb": "GEB.CL",
-    "isa": "ISA.CL",
-    "mineros": "MINEROS.CL",
-    "pei": "PEI.CL",
-    "pfargos": "PFGRUPOARG.CL",
-    "pfaval": "PFAVAL.CL",
-    "pfcibest": "PFCIBEST.CL",
-    "pfdavi": "PFDAVIGRP.CL",
-    "pfsura": "PFGRUPSURA.CL",
-    "promigas": "PROMIGAS.CL",
-    "terpel": "TERPEL.CL",
-}
+BVC_TICKERS: Final[str] = "bvc_tickers"
 # International target stocks
-INT_STOCKS: Final[dict[str, str]] = {
-    "anet": "ANET",
-    "awk": "AWK",
-    "ceg": "CEG",
-    "crwd": "CRWD",
-    "fcx": "FCX",
-    "gev": "GEV",
-    "gldm": "GLDM",
-    "isrg": "ISRG",
-    "lite": "LITE",
-    "lly": "LLY",
-    "ma": "MA",
-    "main": "MAIN",
-    "mrvl": "MRVL",
-    "mu": "MU",
-    "nbis": "NBIS",
-    "nee": "NEE",
-    "o": "O",
-    "panw": "PANW",
-    "purr": "PURR",
-    "qqqm": "QQQM",
-    "sgov": "SGOV",
-    "slv": "SLV",
-    "soxq": "SOXQ",
-    "spcx": "SPCX",
-    "ura": "URA",
-    "vea": "VEA",
-    "voo": "VOO",
-    "vrt": "VRT",
-    "vwo": "VWO",
-    "xar": "XAR",
-    "xle": "XLE",
-    "xlf": "XLF",
-    "xli": "XLI",
-    "xlp": "XLP",
-    "xlv": "XLV",
-    "xyl": "XYL",
-}
-
-STOCK_SYMBOLS: Final[dict[str, str]] = BVC_STOCKS | INT_STOCKS
-
+INT_STOCKS: Final[str] = "int_tickers"
 # Follow-up check ups from crypto.md
+CRYPTO_IDS: Final[str] = "crypto_ids"
+CURR_IDS: Final[str] = "curr_ids"
+
 BASE_CRYPTO_URL: Final[str] = "https://coinmarketcap.com/currencies/{}/"
-CRYPTOS: Final[list[str]] = [
-    # Core Macro & Exchange Reserve
-    "bitcoin",
-    "ethereum",
-    "solana",
-    "bnb",
-    # Network Utility & Event Secondary
-    "tron",
-    "xrp",
-    # Focused Innovation
-    "chainlink",
-    "quant",
-    "bittensor",
-    "aave",
-    "morpho",
-    "hyperliquid",
-    # Tactical swing
-    "zcash",
-    "dash",
-    # stablecoins
-    "tether",
-    "usd-coin",
-    "usd1",
-    "usds",
-    "united-stables",
-    "euro-coin",
-    "eurite"
-]
+BASE_CURR_URL: Final[str] = "https://www.google.com/search?q={}+to+cop+today"
+
+def parse_env_tickers(env_var_name: str) -> dict[str, str]:
+    env_config = dotenv_values(find_dotenv())
+    env_value = env_config.get(env_var_name, "")
+    result: dict[str, str] = {}
+    items = [item.strip() for item in env_value.split(",") if item.strip()]
+
+    for item in items:
+        if ".CL" in item:
+            key = item.split(".CL")[0].strip().lower()
+        else:
+            key = item.lower()
+
+        result[key] = item
+
+    return result
+
+def parse_env_curr(env_var_name: str) -> list[str]:
+    env_config = dotenv_values(find_dotenv())
+    env_value = env_config.get(env_var_name, "")
+    return [item.strip() for item in env_value.split(",") if item.strip()]
+
+STOCK_SYMBOLS: Final[dict[str, str]] = parse_env_tickers(BVC_TICKERS) | parse_env_tickers(INT_STOCKS)
+
 CRYPTO_SYMBOLS: Final[dict[str, str]] = {
-    crypto: BASE_CRYPTO_URL.format(crypto) for crypto in CRYPTOS
+    crypto: BASE_CRYPTO_URL.format(crypto) for crypto in parse_env_curr(CRYPTO_IDS)
 }
 
-
-BASE_URL_TEMPLATE = "https://www.google.com/search?q={}+to+cop+today"
-CURRENCIES: Final[list[str]] = [
-    "brl",
-    "cad",
-    "chf",
-    "eur",
-    "gbp",
-    "jpy",
-    "mxn",
-    "pen",
-    "usd",
-    "yuan",
-]
 CURRENCY_SYMBOLS: Final[dict[str, str]] = {
-    curr: BASE_URL_TEMPLATE.format(curr) for curr in CURRENCIES
+    curr: BASE_CURR_URL.format(curr) for curr in parse_env_curr(CURR_IDS)
 }
 
 WEB_PAGE_SYMBOLS: Final[dict[str, str]] = {
